@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="pragma" content="no-cache">
+    <meta http-equiv="cache-control" content="no-cache">
+    <meta http-equiv="expires" content="0">
+    <title>Tooltip</title>
+    <link rel="stylesheet" href="./index.css">
+</head>
+<body>
+    <div class="book">
+        <div class="book-item">
+            <div class="book-photo"><img src="img/mon.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name">Monday</div>
+                <div class="book-dsc">富强</div>
+                <span class="book-tooltip" data-tooltip="表示富足而强盛。财富充裕，力量强大。又指富足而强盛的国家"></span>
+            </div>
+        </div>
+        <div class="book-item">
+            <div class="book-photo" ><img src="img/tue.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name" data-tooltip="月上西楼">Tuesday </div>
+                <div class="book-dsc">民主</div>
+            	<span class="book-tooltip" data-tooltip="窗前明月光"></span>
+            </div>
+        </div>
+        <div class="book-item">
+            <div class="book-photo" ><img src="img/wed.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name" data-tooltip="曲项向天歌">Wednesday </div>
+                <div class="book-dsc">文明</div>
+            	<span class="book-tooltip" data-tooltip="人生若只如初见"></span>
+            </div>
+        </div>
+        <div class="book-item">
+            <div class="book-photo"><img src="img/thu.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name">Thursday </div>
+                <div class="book-dsc">和谐</div>
+                <span class="book-tooltip" data-tooltip="我的愿望是世界和平"></span>
+            </div>
+        </div>
+        <div class="book-item">
+            <div class="book-photo"><img src="img/fri.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name">Friday</div>
+                <div class="book-dsc">自由</div>
+                <span class="book-tooltip" data-tooltip="什么才是最真实的模样"></span>
+            </div>
+        </div>
+        <div class="book-item">
+            <div class="book-photo"><img src="img/sat.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name">Saturday </div>
+                <div class="book-dsc">平等</div>
+                <span class="book-tooltip" data-tooltip="不需要被灌溉"></span>
+            </div>
+        </div>
+        <div class="book-item">
+            <div class="book-photo"><img src="img/sun.JPG"></img></div>
+            <div class="book-sketch">
+                <div class="book-name">Sunday</div>
+                <div class="book-dsc">公正</div>
+                <span class="book-tooltip" data-tooltip="去就去,来就来"></span>
+            </div>
+        </div>
+    </div>
+
+<script src="./index.js"></script>
+</body>
+</html>
+ 
+ 
+ <!-- 下面这段js 是更为简单一点的写法-->
+<!--<script src="http://apps.bdimg.com/libs/jquery/2.1.4/jquery.js"></script>
+<script>
+
+	$('.book-tooltip').mouseout(function() {
+		$('.lx-tooltip').remove();  //将之前的tooltip删除
+	})
+
+	$('.book-tooltip').mouseover(function() {
+		var offset = $(this).offset(); //获取问号坐标
+
+
+		var windowWifth = $(window).width();  //获取窗口宽度
+		var windowHeight = $(window).height();  //获取窗口高度
+
+
+
+ 		var text = $(this).attr('data-tooltip'); //获取tooltip的文字
+
+
+		if (offset.left < 80) {  
+		// 如果问号的横坐标小于80,tooltip显示在问号右边
+
+			var top = parseInt(offset.top)+8; // 问号纵坐标+8
+			var left = parseInt(offset.left)+8; //问号横坐标+8
+
+			var str = '<div class="lx-tooltip right" style="top: '+ top +'px; left: '+ left +'px;">'+text+'</div>';
+		}else if ((windowWidth - offset.left) < 80) {  
+		// 如果问号的横坐标距离窗口最右边小于80,tooltip显示在问号左边
+
+			var top = parseInt(offset.top)+8; // 问号纵坐标+8
+			var left = parseInt(offset.left-120)-8; //问号横坐标-tooltip长度-8
+
+			var str = '<div class="lx-tooltip left" style="top: '+ top +'px; left: '+ left +'px;">'+text+'</div>';
+
+		}else if((windowHeight - offset.top) < 30){  
+		// 如果问号的纵坐标距离窗口底部小于80,tooltip显示在问号上边
+
+			var top = parseInt(offset.top)-25-8; // 问号纵坐标-tooltip高度-8
+			var left = parseInt(offset.left)+8; //问号横坐标+8
+
+			var str = '<div class="lx-tooltip top" style="top: '+ top +'px; left: '+ left +'px;">'+text+'</div>';
+		}else{ 
+		//不符合以上情况直接显示在问号下边
+
+			var top = parseInt(offset.top)+25; // 问号纵坐标+tooltip高度
+			var left = parseInt(offset.left)+8; //问号横坐标+8
+
+			var str = '<div class="lx-tooltip bottom" style="top: '+ top +'px; left: '+ left +'px;">'+text+'</div>';
+		}
+		$('body').append(str);
+	})
+</script>-->

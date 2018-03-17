@@ -1,0 +1,112 @@
+@charset "utf-8";
+
+*, *:before, *:after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #E7DACB;
+    color: rgb(107, 66, 18);
+}
+
+.book {
+    display: flex;
+    flex-wrap: wrap;
+    padding: 24px 12px;
+}
+.book-item {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    position: relative;
+    margin: 0 12px 24px;
+    padding: 12px;
+    min-width: 200px;
+    background: rgb(223, 201, 178);
+}
+.book-photo {
+    display: inline-block;
+    margin-right: 12px;
+    width: 80px;
+    height: 80px;
+    background: rgba(255, 255, 255, .2);
+}
+img{
+	width: 80px;
+    height: 80px;
+}
+.book-name {
+    font-size: 16px;
+}
+.book-dsc {
+    margin-top: 12px;
+    font-size: 14px;
+    color: rgb(107, 66, 18)
+}
+.book-tooltip {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    line-height: 14px;
+    text-align: center;
+    font-size: 12px;
+}
+.book-tooltip:after {
+    display: inline-block;
+    width: 16px;
+    height: 16px;
+    border: 1px solid rgb(168, 140, 108);
+    color: rgb(168, 140, 108);
+    border-radius: 50%;
+    content: "?";
+    cursor: help;
+}
+
+/* tooltip 组件样式 */
+.lx-tooltip {
+    position: fixed;
+    z-index: 999;
+    display: inline-block;
+    padding: 4px 12px;
+    max-width: 200px;
+    font-size: 12px;
+    line-height: 1.6;
+    background: rgb(107, 66, 18);
+    color: #E7DACB;
+    border-radius: 4px;
+}
+.lx-tooltip.top, .lx-tooltip.bottom, .lx-tooltip.top:after, .lx-tooltip.bottom:after {
+    transform: translate(-50%, 0);
+}
+.lx-tooltip.left, .lx-tooltip.right, .lx-tooltip.left:after, .lx-tooltip.right:after {
+    transform: translate(0, -50%);
+}
+.lx-tooltip:after {
+    position: absolute;
+    width: 0;
+    height: 0;
+    border: 4px solid transparent;
+    content: "";
+}
+.lx-tooltip.top:after {
+    top: 100%;
+    left: 50%;
+    border-top-color: rgb(107, 66, 18);
+}
+.lx-tooltip.right:after {
+    top: 50%;
+    right: 100%;
+    border-right-color: rgb(107, 66, 18);
+}
+.lx-tooltip.bottom:after {
+    left: 50%;
+    bottom: 100%;
+    border-bottom-color: rgb(107, 66, 18);
+}
+.lx-tooltip.left:after {
+    top: 50%;
+    left: 100%;
+    border-left-color: rgb(107, 66, 18);
+}
